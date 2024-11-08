@@ -9,7 +9,7 @@ import "react-simple-keyboard/build/css/index.css";
 import "./styles.css";
 
 
-export default function  keyboard() {
+export default function keyboard() {
 
     const [input, setInput] = useState("");
     const [layout, setLayout] = useState("default");
@@ -17,51 +17,63 @@ export default function  keyboard() {
     const onChange = input => {
         setInput(input);
         console.log("Input changed", input);
-      };
-    
-      const handleShift = () => {
+    };
+
+    const handleShift = () => {
         const newLayoutName = layout === "default" ? "shift" : "default";
         setLayout(newLayoutName);
-      };
-    
-      const onKeyPress = button => {
+    };
+
+    const onKeyPress = button => {
         console.log("Button pressed", button);
-    
+
         /**
          * If you want to handle the shift and caps lock buttons
          */
         if (button === "{shift}" || button === "{lock}") handleShift();
-      };
-    
-      const onChangeInput = event => {
+    };
+
+    const onChangeInput = event => {
         const input = event.target.value;
         setInput(input);
         keyboard.current.setInput(input);
-      };
-    
-      return (
+    };
+
+    return (
         <div className="App">
-          <input
-            value={input}
-            placeholder={"Please Enter Your ID"}
-            onChange={onChangeInput}
-          />
-          <Keyboard
-            keyboardRef={r => (keyboard.current = r)}
-            layoutName={layout}
-            onChange={onChange}
-            onKeyPress={onKeyPress}
-            excludeFromLayout = { 
-                {
-                default: ["{tab}", "", "{space}", "", "@", "", ".com", "" ],
-                shift: ["{space}", "", "@", "", ".com", "" ],
-            }
-            }
-            display={{
-                '{bksp}': 'BACK',
-                '{enter}': 'Enter',
-            }}
-          />
+            <input
+                value={input}
+                placeholder={"Please Enter Your ID"}
+                onChange={onChangeInput}
+            />
+            <Keyboard
+                keyboardRef={r => (keyboard.current = r)}
+                layoutName={layout}
+                onChange={onChange}
+                onKeyPress={onKeyPress}
+                layout={{
+                    'default': [
+                        '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+                        '{tab} q w e r t y u i o p [ ] \\',
+                        '{lock} a s d f g h j k l ; \' {enter}',
+                        '{shift} z x c v b n m , . / {shift}',
+                        '.com @ {space}'
+                    ],
+                    'shift': [
+                        '{shift} Z X C V B N M &lt; &gt; ? {shift}',
+                    ]
+                }}
+                excludeFromLayout={
+                    {
+                        default: ["`", "-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", "{enter}", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
+                        shift: ["{space}", "@", ".com"],
+                    }
+                }
+                display={{
+                    '{bksp}': 'BACK',
+                    '{shift}': 'French',
+                }}
+            />
         </div>
-      );
+    );
 }

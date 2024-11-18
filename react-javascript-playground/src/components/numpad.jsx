@@ -9,7 +9,7 @@ import "react-simple-keyboard/build/css/index.css";
 import "./styles.css";
 
 
-export default function keyboard() {
+export default function numPad() {
 
     const [input, setInput] = useState("");
     const [layout, setLayout] = useState("default");
@@ -53,16 +53,16 @@ export default function keyboard() {
                 onKeyPress={onKeyPress}
                 layout={{
                     'default': [
-                        '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
-                        '{tab} q w e r t y u i o p [ ] \\',
-                        '{lock} A s d F g h j k l ; \' {enter}',
-                        '{shift} z x c v b n m , . / {shift}',
-                        '.com @ {space}'
-                    // '1 2 3',
-                    // '4 5 6',
-                    // '7 8 9',
-                    // '0',
-                    // 'enter'
+                        // '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+                        // '{tab} q w e r t y u i o p [ ] \\',
+                        // '{lock} A s d F g h j k l ; \' {enter}',
+                        // '{shift} z x c v b n m , . / {shift}',
+                        // '.com @ {space}'
+                    '1 2 3',
+                    '4 5 6',
+                    '7 8 9',
+                    '0',
+                    'enter'
                     ],
                     'shift': [
                         '{shift} Z X C V B N M &lt; &gt; ? {shift}',

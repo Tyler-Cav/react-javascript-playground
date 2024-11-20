@@ -1,12 +1,7 @@
 import React, { useRef, useState } from "react";
-import ReactDOM from "react-dom";
 import Keyboard from "react-simple-keyboard";
 
-// Instead of the default import, you can also use this:
-// import { KeyboardReact as Keyboard } from "react-simple-keyboard";
-
 import "react-simple-keyboard/build/css/index.css";
-import "./styles.css";
 
 
 export default function keyboard() {
@@ -55,18 +50,13 @@ export default function keyboard() {
                     'default': [
                         '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
                         '{tab} q w e r t y u i o p [ ] \\',
-                        '{lock} A s d F g h j k l ; \' {enter}',
-                        '{shift} z x c v b n m , . / {shift}',
+                        '{lock} A s d f g h j k l ; \' {enter}',
+                        '{shift} z x c v b n \\\u0046\ , . / {shift}',
                         '.com @ {space}'
-                    // '1 2 3',
-                    // '4 5 6',
-                    // '7 8 9',
-                    // '0',
-                    // 'enter'
                     ],
                     'shift': [
                         '{shift} Z X C V B N M &lt; &gt; ? {shift}',
-                        'w e t'
+                        'w e \\\u0046'
                     ]
                 }}
                 excludeFromLayout={
@@ -77,7 +67,7 @@ export default function keyboard() {
                 }
                 display={{
                     '{bksp}': 'BACK',
-                    '{shift}': 'French',
+                    '{shift}': 'Shift',
                 }}
             />
         </div>

@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import Keyboard from "react-simple-keyboard";
-import "./styles.css"
 import "react-simple-keyboard/build/css/index.css";
 
 
 
-export default function keyboard() {
+
+export default function frenchKeyboard() {
 
     const [input, setInput] = useState("");
     const [layout, setLayout] = useState("default");
@@ -52,44 +52,21 @@ export default function keyboard() {
                 onChange={onChange}
                 onKeyPress={onKeyPress}
                 layout={{
-                    'default': [
-                        '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
-                        '{tab} q w e r t y u i o p [ ] \\',
-                        '{lock} A s d f g h j k l ; \'',
-                        '{shift} z x c v b ̃ɑ a ç ɑ̃ . / {shift}',
-                        '.com @ {space}',
-                        '{enter}'
+                    default: [
+                        "` 1 2 3 4 5 6 7 8 9 0 \u00B0 + {bksp}",
+                        "{tab} a z e r t y u i o p ^ $",
+                        "{lock} q s d f g h j k l m \u00F9 * {enter}",
+                        "{shift} < w x c v b n , ; : ! {shift}",
+                        ".com @ {space}",
                     ],
-                    'shift': [
-                        '{shift} Z X C V B N M &lt; &gt; ? {shift}',
-                        'w e \u0046 '
-                    ]
+                    shift: [
+                        "\u00B2 & \u00E9 \" ' ( - \u00E8 _ \u00E7 \u00E0 ) = {bksp}",
+                        "{tab} A Z E R T Y U I O P \u00A8 \u00A3",
+                        "{lock} Q S D F G H J K L M % \u00B5 {enter}",
+                        "{shift} > W X C V B N ? . / \u00A7 {shift}",
+                        ".com @ {space}",
+                    ],
                 }}
-                excludeFromLayout={
-                    {
-                        default: ["`", "-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
-                        shift: ["{space}", "@", ".com"],
-                    }
-                }
-                display= {{
-                    '{bksp}': 'beck',
-                    '{shift}': '⇧',
-                    '{enter}': `Submit`
-                }}
-                buttonTheme={[
-                    {
-                        class: "keys",
-                        buttons: "q z {bksp}",
-                    },
-                    {
-                        class: "Shift-Button",
-                        buttons: "{shift}"
-                    },
-                    {
-                        class: "Enter-Button",
-                        buttons: "{enter}"
-                    }
-                ]}
             />
         </div>
     );

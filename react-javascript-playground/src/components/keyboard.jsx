@@ -28,7 +28,8 @@ export default function keyboard() {
          */
         if (button === "{shift}" || button === "{lock}") handleShift();
         if (button === "{enter}") {
-            console.log("Submit button recognized")
+            console.log(input)
+            setInput("")
         }
     };
 
@@ -53,12 +54,11 @@ export default function keyboard() {
                 onKeyPress={onKeyPress}
                 layout={{
                     'default': [
-                        '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
+                        '` 2 3 4 5 6 7 8 9 0 - = {bksp}',
                         '{tab} q w e r t y u i o p [ ] \\',
-                        '{lock} A s d f g h j k l ; \'',
+                        '{lock} A s d f g h j k l ; \' {enter}',
                         '{shift} z x c v b ̃ɑ a ç ɑ̃ . / {shift}',
                         '.com @ {space}',
-                        '{enter}'
                     ],
                     'shift': [
                         '{shift} Z X C V B N M &lt; &gt; ? {shift}',
@@ -67,28 +67,20 @@ export default function keyboard() {
                 }}
                 excludeFromLayout={
                     {
-                        default: ["`", "-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
+                        default: ["-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
                         shift: ["{space}", "@", ".com"],
                     }
                 }
                 display= {{
-                    '{bksp}': 'beck',
-                    '{shift}': '⇧',
+                    '{bksp}': 'BACK',
+                    '{shift}': 'Shift',
                     '{enter}': `Submit`
                 }}
                 buttonTheme={[
                     {
                         class: "keys",
-                        buttons: "q z {bksp}",
+                        buttons: "q",
                     },
-                    {
-                        class: "Shift-Button",
-                        buttons: "{shift}"
-                    },
-                    {
-                        class: "Enter-Button",
-                        buttons: "{enter}"
-                    }
                 ]}
             />
         </div>

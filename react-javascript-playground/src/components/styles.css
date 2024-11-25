@@ -3,10 +3,10 @@ input {
     height: 100px;
     padding: 20px;
     font-size: 20px;
-    border: 2px solid yellow;
-    background-color: black;
+    border: yellow;
+    background-color: yellow;
     box-sizing: border-box;
-    color: white;
+    color: black;
   }
   
   .simple-keyboard {
@@ -19,7 +19,7 @@ input {
 
 .simple-keyboard.hg-layout-default .hg-button.keys{
     background: pink;
-    color: white;
+    color: black;
     border-radius: 0px;
     border: none;
 }

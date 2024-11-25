@@ -19,10 +19,11 @@ This document assumes you have basic React/Javascript Knowledge
 5. Command `npm run dev` to launch the app to test that the below appears.
    - <img src="images/keyboard.png" alt="drawing" width="500"/>)
 
-## Keyboard Properties
+## KeyboardProperties
 - All changes can be made directly within the `keyboard.jsx` file.
 - Most properties you can change will be available with the `Keyboard` component.
 - This portion of the code will be walked through for you to edit.
+### Example
 ```
    <Keyboard
        keyboardRef={r => (keyboard.current = r)}
@@ -52,9 +53,16 @@ This document assumes you have basic React/Javascript Knowledge
            '{bksp}': 'BACK',
            '{shift}': 'Shift',
        }}
+       buttonTheme={[
+            {
+                class: "keys",
+                buttons: "q z a {bksp}",
+            },
+        ]}
   ```
 
-### Creating a layout
+### Layout Prop
+#### Default
    - Used to create the keyboard itself.
    - Ex: I can create the layout with just these lines. 
    - If you also go into chrome and inspect the console,
@@ -68,17 +76,32 @@ This document assumes you have basic React/Javascript Knowledge
   - <img src="images/changingLayoutDefault.png" alt="drawing" width="500"/>)
 - If you also go into chrome and inspect the console, the library is tracking all the values entered.
   - <img src="images/stateTracking.png" alt="drawing" width="500"/>)
-### Changing letters to new values.
-   - Within the Keyboard component, you will see a property labeled as `display`. If you follow the syntax correctly you can replace any key with a different value.
-   - Ex: Changing the "French" key above into the "Shift" key.
-   - There are curly braces only under certain functional keys. If you want to change the letter `a` to `A`, you can omit the curly braces.
-      ```
-       display={{
-           '{bksp}': 'BACK',
-           '{shift}': 'Shift',
-       }}
-       ```
-   - <img src="images/updateFrenchToShift.png" alt="drawing" width="500"/>
+#### Shift
+- The shift in the layout section will define what the layout will be when the shift key is pressed.
+    ```
+    'shift': [
+        '{shift} Z X C V B N M &lt; &gt; ? {shift}',
+        'w e \u0046 '
+    ]
+    ```
+
+### Excluding Certain Characters Prop
+- If you'd like to keep keys within the default layout but exclude certain keys as necessary you can use the `excludeFromLayout` prop.
+- As you can see in the above [example](#example) that includes the prop, we are currently excluding a lot. In the default we have all of those keys.
+- You can also decide what to exclude on your shift layout as well.
+- Please note the syntax in the above to test yourself. If we remove for example the `{enter}` key from the excludes section, it will populate in the keyboard.
+  - ![img.png](images/addingEnterExcludesExample.png)
+### Display Prop
+- Within the Keyboard component, you will see a property labeled as `display`. If you follow the syntax correctly you can replace any key with a different value.
+- Ex: Changing the "French" key above into the "Shift" key.
+- There are curly braces only under certain functional keys. If you want to change the letter `a` to `A`, you can omit the curly braces.
+   ```
+    display={{
+        '{bksp}': 'BACK',
+        '{shift}': 'Shift',
+    }}
+    ```
+  - <img src="images/updateFrenchToShift.png" alt="drawing" width="500"/>
 
 ### Component-Code
 ```

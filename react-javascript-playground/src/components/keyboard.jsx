@@ -12,7 +12,7 @@ export default function keyboard() {
     const keyboard = useRef();
     const onChange = input => {
         setInput(input);
-        console.log("Input changed", input);
+        // console.log("Input changed", input);
     };
 
     const handleShift = () => {
@@ -21,15 +21,15 @@ export default function keyboard() {
     };
 
     const onKeyPress = button => {
-        console.log("Button pressed", button);
-
+        // console.log("Button pressed", button);
         /**
          * If you want to handle the shift and caps lock buttons
          */
         if (button === "{shift}" || button === "{lock}") handleShift();
         if (button === "{enter}") {
-            console.log(input)
-            setInput("")
+            console.log(keyboard.current)
+            console.log(input);
+            keyboard.current.setInput("");
         }
     };
 
@@ -46,6 +46,7 @@ export default function keyboard() {
                 value={input}
                 placeholder={"Please Enter Your ID"}
                 onChange={onChangeInput}
+                className="englishInput"
             />
             <Keyboard
                 keyboardRef={r => (keyboard.current = r)}
@@ -54,10 +55,10 @@ export default function keyboard() {
                 onKeyPress={onKeyPress}
                 layout={{
                     'default': [
-                        '` 2 3 4 5 6 7 8 9 0 - = {bksp}',
+                        '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
                         '{tab} q w e r t y u i o p [ ] \\',
-                        '{lock} A s d f g h j k l ; \' {enter}',
-                        '{shift} z x c v b ̃ɑ a ç ɑ̃ . / {shift}',
+                        '{lock} a s d f g h j k l ; \' {enter}',
+                        '{shift} z x c v b n m . / {shift}',
                         '.com @ {space}',
                     ],
                     'shift': [
@@ -65,6 +66,9 @@ export default function keyboard() {
                         'w e \u0046 '
                     ]
                 }}
+                theme={
+                    "hg-theme-default hg-layout-default englishTheme"
+                }
                 excludeFromLayout={
                     {
                         default: ["-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
@@ -79,7 +83,7 @@ export default function keyboard() {
                 buttonTheme={[
                     {
                         class: "keys",
-                        buttons: "q",
+                        buttons: "{enter} {shift} {bksp}",
                     },
                 ]}
             />

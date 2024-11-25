@@ -1,21 +1,45 @@
-input {
+.englishInput {
     width: 100%;
     height: 100px;
     padding: 20px;
     font-size: 20px;
-    border: yellow;
-    background-color: yellow;
-    box-sizing: border-box;
-    color: black;
   }
-  
-  .simple-keyboard {
+.simple-keyboard {
     max-width: 1024px;
-    margin: 0px;
-    background-color: transparent;
-    font: bold 15px "BitstromWera Nerd Font";
-    border-radius: 20px;
-  }
+}
+
+.simple-keyboard.englishTheme {
+    background: rgb(255,0,0);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(240,240,247,1) 37%, rgba(255,255,255,1) 49%, rgba(255,245,245,1) 58%, rgba(9,9,121,1) 100%);
+    border-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.simple-keyboard.englishTheme .hg-button {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: grey;
+    color: white;
+}
+
+.simple-keyboard.frenchTheme {
+    background: rgb(9,9,121);
+    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(240,240,247,1) 42%, rgba(255,255,255,1) 49%, rgba(255,245,245,1) 55%, rgba(255,0,0,1) 100%);
+    border-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.simple-keyboard.frenchTheme .hg-button {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    color: black;
+}
 
 .simple-keyboard.hg-layout-default .hg-button.keys{
     background: pink;
@@ -23,19 +47,3 @@ input {
     border-radius: 0px;
     border: none;
 }
-.simple-keyboard.hg-layout-default .hg-button.Shift-Button {
-    background: yellow;
-    color: black;
-    border-radius: 10px;
-    border: none;
-    width: 200px;
-}
-.simple-keyboard.hg-layout-default .hg-button.Enter-Button {
-    background: yellow;
-    color: black;
-    border-radius: 50px;
-    border: none;
-    width: 200px;
-    height: 200px;
-}
-

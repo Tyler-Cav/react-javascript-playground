@@ -67,6 +67,9 @@ export default function frenchKeyboard() {
                         ".com @ {space}",
                     ],
                 }}
+                theme={
+                    "hg-theme-default hg-layout-default frenchTheme"
+                }
             />
         </div>
     );

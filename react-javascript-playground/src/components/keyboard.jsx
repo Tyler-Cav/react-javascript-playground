@@ -71,20 +71,25 @@ export default function keyboard() {
                 }
                 excludeFromLayout={
                     {
-                        default: ["-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
+                        default: ["-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "@", ".com"],
                         shift: ["{space}", "@", ".com"],
                     }
                 }
                 display= {{
                     '{bksp}': 'BACK',
                     '{shift}': 'Shift',
-                    '{enter}': `Submit`
+                    '{enter}': `Submit`,
+                    '{space}': "Space"
                 }}
                 buttonTheme={[
                     {
                         class: "keys",
                         buttons: "{enter} {shift} {bksp}",
                     },
+                    {
+                        class: "space",
+                        buttons: "{space}"
+                    }
                 ]}
             />
         </div>

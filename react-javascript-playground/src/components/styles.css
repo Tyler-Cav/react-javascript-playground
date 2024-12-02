@@ -9,8 +9,7 @@
 }
 
 .simple-keyboard.englishTheme {
-    background: rgb(255,0,0);
-    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(240,240,247,1) 37%, rgba(255,255,255,1) 49%, rgba(255,245,245,1) 58%, rgba(9,9,121,1) 100%);
+    background: transparent;
     border-radius: 0;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -18,6 +17,9 @@
 
 .simple-keyboard.englishTheme .hg-button {
     height: 50px;
+    width: 30px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,24 +28,36 @@
 }
 
 .simple-keyboard.frenchTheme {
-    background: rgb(9,9,121);
-    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(240,240,247,1) 42%, rgba(255,255,255,1) 49%, rgba(255,245,245,1) 55%, rgba(255,0,0,1) 100%);
+    background: transparent;
     border-radius: 0;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 .simple-keyboard.frenchTheme .hg-button {
     height: 50px;
+    width: 30px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: lightblue;
-    color: black;
+    background: grey;
+    color: white;
 }
 
 .simple-keyboard.hg-layout-default .hg-button.keys{
-    background: pink;
-    color: black;
-    border-radius: 0px;
+    background: rgb(35,122,194);
+    color: white;
+    border-radius: 25px;
+    border: none;
+}
+
+.simple-keyboard.hg-layout-default .hg-button.space{
+    background: rgb(35,122,194);
+    margin-top: 20x;
+    margin-right: 60px;
+    margin-left: 60px;
+    color: white;
+    border-radius: 25px;
     border: none;
 }

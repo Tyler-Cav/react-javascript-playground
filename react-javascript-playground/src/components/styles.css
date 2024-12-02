@@ -5,7 +5,10 @@
     font-size: 20px;
   }
 .simple-keyboard {
-    max-width: 1024px;
+    width: 1024px;
+    border: 3px solid black;
+    margin: 0;
+    padding: 0;
 }
 
 .simple-keyboard.englishTheme {
@@ -14,6 +17,23 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+.simple-keyboard.englishTheme .hg-row:nth-child(1){
+    background: blue
+}
+.simple-keyboard.englishTheme .hg-row:nth-child(2){
+    background-color: orange;
+    margin-right: 50px;
+}
+.simple-keyboard.englishTheme .hg-row:nth-child(3){
+    background-color: green;
+    margin-left: 20px;
+}
+.simple-keyboard.englishTheme .hg-row:nth-child(4){
+    background-color: yellow;
+}.simple-keyboard.englishTheme .hg-row:nth-child(5){
+     background-color: pink;
+}
+
 
 .simple-keyboard.englishTheme .hg-button {
     height: 50px;
@@ -55,8 +75,8 @@
 .simple-keyboard.hg-layout-default .hg-button.space{
     background: rgb(35,122,194);
     margin-top: 20x;
-    margin-right: 60px;
-    margin-left: 60px;
+    margin-right: 300px;
+    margin-left: 300px;
     color: white;
     border-radius: 25px;
     border: none;

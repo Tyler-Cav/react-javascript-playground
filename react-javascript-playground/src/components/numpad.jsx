@@ -40,9 +40,10 @@ export default function numPad() {
     };
 
     return (
-        <div className="numpadWrapper">
+        <div className="">
             <div className={"tryingThis"}>
-                <h2 className={"secondTry"}>Insert ID</h2>
+                <h4 className={"secondTry"}>Pick Up Device</h4>
+                <p>Enter Your Badge ID:</p>
                 <input
                     value={input}
                     placeholder={"Please Enter Your ID"}

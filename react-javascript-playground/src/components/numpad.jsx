@@ -40,12 +40,16 @@ export default function numPad() {
     };
 
     return (
-        <div className="App">
-            <input
-                value={input}
-                placeholder={"Please Enter Your ID"}
-                onChange={onChangeInput}
-            />
+        <div className="numpadWrapper">
+            <div className={"tryingThis"}>
+                <h2 className={"secondTry"}>Insert ID</h2>
+                <input
+                    value={input}
+                    placeholder={"Please Enter Your ID"}
+                    onChange={onChangeInput}
+                    className={"numPadInput"}
+                />
+            </div>
             <Keyboard
                 keyboardRef={r => (keyboard.current = r)}
                 layoutName={layout}
@@ -53,32 +57,32 @@ export default function numPad() {
                 onKeyPress={onKeyPress}
                 layout={{
                     'default': [
-                        // '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
-                        // '{tab} q w e r t y u i o p [ ] \\',
-                        // '{lock} A s d F g h j k l ; \' {enter}',
-                        // '{shift} z x c v b n m , . / {shift}',
-                        // '.com @ {space}'
                     '1 2 3',
                     '4 5 6',
                     '7 8 9',
                     '0',
-                    'enter'
-                    ],
-                    'shift': [
-                        '{shift} Z X C V B N M &lt; &gt; ? {shift}',
-                        'w e t'
+                    '{enter}'
                     ]
                 }}
+                theme={
+                    "hg-theme-default hg-layout-default numPadTheme"
+                }
                 excludeFromLayout={
                     {
-                        default: ["`", "-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", "{enter}", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
+                        default: ["`", "-", "+", "=", "[", "]", "\\", "{lock}", ";", "'", ",", ".", "/", "{tab}", "{space}", "@", ".com"],
                         shift: ["{space}", "@", ".com"],
                     }
                 }
                 display={{
                     '{bksp}': 'BACK',
-                    '{shift}': 'French',
+                    '{enter}': 'Submit',
                 }}
+                buttonTheme={[
+                    {
+                        class: "numPadEnter",
+                        buttons: "{enter}"
+                    }
+                ]}
             />
         </div>
     );
